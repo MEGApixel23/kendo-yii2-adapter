@@ -1,0 +1,20 @@
+{
+    "name": "megapixel23/kendo-yii2-adapter",
+    "description": "KendoTable adapter for Yii2",
+    "authors": [
+        {
+            "name": "MEGApixel23",
+            "email": "megapixel23@ya.ru"
+        }
+    ],
+    "version": "0.0.1",
+    "minimum-stability": "stable",
+    "require": {
+        "yiisoft/yii2": ">=2.0.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "KendoAdapter": "src"
+        }
+    }
+}
