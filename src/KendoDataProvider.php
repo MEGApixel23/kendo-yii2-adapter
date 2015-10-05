@@ -6,7 +6,12 @@ use yii\data\ActiveDataProvider;
 use yii\db\Query;
 use Yii;
 use yii\data\Pagination;
+use yii\base\InvalidParamException;
 
+/**
+ * Class KendoDataProvider
+ * @package KendoAdapter
+ */
 class KendoDataProvider extends ActiveDataProvider
 {
     const DEFAULT_PAGE_SIZE = 15;
@@ -97,14 +102,14 @@ class KendoDataProvider extends ActiveDataProvider
         $secureFieldsList = $this->getSecureFields($query);
         $tableAlias = $this->getTableAlias($query);
 
-        for ($i=0; $i<count($filters->filters); $i++) {
+        for ($i = 0; $i < count($filters->filters); $i++) {
             $filter = $filters->filters[$i];
 
             if (!in_array($filter->field, $secureFieldsList))
                 continue;
 
             if ($filter->conditions) {
-                for ($j=0; $j<count($filter->conditions); $j++) {
+                for ($j = 0; $j < count($filter->conditions); $j++) {
                     $query = $query->andWhere($filter->conditions[$j]);
                 }
             } elseif ($filter->operator === KendoFiltersCollection::OPERATOR_EQUAL) {

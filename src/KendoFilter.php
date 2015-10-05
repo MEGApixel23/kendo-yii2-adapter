@@ -4,6 +4,10 @@ namespace KendoAdapter;
 
 use yii\base\Object;
 
+/**
+ * Class KendoFilter
+ * @package KendoAdapter
+ */
 class KendoFilter extends Object
 {
     public $operator;
@@ -15,6 +19,4 @@ class KendoFilter extends Object
     {
         $this->value = preg_replace('/\(.*\)/', '', $this->value);
     }
-
-
 }

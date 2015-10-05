@@ -7,8 +7,7 @@ use yii\base\Object;
 
 /**
  * Class KendoFiltersCollection
- * @package common\extensions\KendoAdapter
- * @property $filters KendoFilter[]
+ * @package KendoAdapter
  */
 class KendoFiltersCollection extends Object
 {
@@ -41,7 +40,7 @@ class KendoFiltersCollection extends Object
         }
 
         if (isset($config['filters']) && is_array($config['filters'])) {
-            for ($i=0; $i<count($config['filters']); $i++) {
+            for ($i = 0; $i < count($config['filters']); $i++) {
                 if ($config['filters'][$i] instanceof KendoFilter) {
                     $this->filters[] = $config['filters'][$i];
 
@@ -81,7 +80,7 @@ class KendoFiltersCollection extends Object
         if (!$this->fieldsList) {
             $fieldsList = [];
 
-            for ($i=0; $i<count($this->filters); $i++) {
+            for ($i = 0; $i < count($this->filters); $i++) {
                 $fieldsList[] = $this->filters[$i]->field;
             }
 
@@ -97,7 +96,7 @@ class KendoFiltersCollection extends Object
      */
     public function getFilter($name)
     {
-        for ($i=0; $i<count($this->filters); $i++) {
+        for ($i = 0; $i < count($this->filters); $i++) {
             if ($this->filters[$i]->field === $name) {
                 $filter = &$this->filters[$i];
 
@@ -115,8 +114,8 @@ class KendoFiltersCollection extends Object
         if (!is_array($filtersNames))
             throw new Exception('Wrong argument format');
 
-        for ($i=0; $i<count($filtersNames); $i++) {
-            for ($j=0; $j<count($this->filters); $j++) {
+        for ($i = 0; $i < count($filtersNames); $i++) {
+            for ($j = 0; $j < count($this->filters); $j++) {
                 if ($filtersNames[$i] === $this->filters[$j]->field) {
                     unset($this->filters[$j]);
 
@@ -130,7 +129,7 @@ class KendoFiltersCollection extends Object
     {
         $filters = [];
 
-        for ($i=0; $i<count($this->filters); $i++) {
+        for ($i = 0; $i < count($this->filters); $i++) {
             if (in_array($this->filters[$i]->field, $names))
                 $filters[] = &$this->filters[$i];
         }
