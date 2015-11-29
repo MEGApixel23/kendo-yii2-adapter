@@ -28,7 +28,7 @@ Frontend
 ```js
 var grid = $("#grid").kendoGrid({
     dataSource: {
-        type: json',
+        type: 'json',
         transport: {
             read: '/custom/action/handler'
         },
@@ -41,7 +41,7 @@ var grid = $("#grid").kendoGrid({
         serverFiltering: true
     },
     filterable: {
-        mode: "row"
+        mode: 'row'
     },
     pageable: true
 }).data('kendoGrid');
