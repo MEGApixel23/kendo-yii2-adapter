@@ -12,7 +12,7 @@ It is a adapter for Yii2 that transforms Kendo Grid\`s frontend requests into Ac
         "megapixel23/kendo-yii2-adapter": "dev-master"
     }
 ```
-2. Add following line into `repositories` section in your `composer.json` to set up composer`s package source path:
+2. If you want to install package directly from GitHub, you need to add following line into `repositories` section in your `composer.json` to set up composer`s package source path:
 ```json
     "repositories": [
         {
